@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS Web Solutions - Projektek</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="input.css">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-slate-200">
+
+      <nav
+        class="sticky top-0 z-50 flex items-center justify-between w-full h-18 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur">
+        <a href="./index.html">
+            <img width="120px" alt="logo" src="./assets/logo.png" />
+        </a>
+        <div class="hidden lg:flex items-center gap-8 transition duration-500">
+            <a href="./index.html" class="hover:text-slate-300 transition">
+                Főoldal
+            </a>
+        <a href="./prices.html" class="hover:text-slate-300 transition">Árlista</a>
+            <a href="./projects.html" class="nav-link active-link">
+                Projektek
+            </a>
+        </div>
+        <div class="hidden lg:block space-x-3">
+            <a
+                class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 transition text-white rounded-md active:scale-95" href="work-with-us.html">
+                Dolgozz velünk!
+        </a>
+        </div>
+        <button class="lg:hidden active:scale-90 transition" id="menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-menu size-6.5" aria-hidden="true">
+                <path d="M4 5h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 19h16"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div id="nav-links" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 lg:hidden transition-transform duration-400 -translate-x-full">
+        <a href="./index.html">
+            Főoldal
+        </a>
+    <a href="./prices.html">
+        Árlista
+    </a>
+        <a href="./projects.html" class="nav-link active-link">
+            Projektek
+        </a>
+        <a href="./work-with-us.html">
+            Dolgozz velünk!
+        </a>
+        <button id="close-menu" class="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-slate-100 hover:bg-slate-200 transition text-black rounded-md flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-x" aria-hidden="true">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+        <svg class="absolute -z-10 w-full -mt-40 md:mt-0" width="1440" height="676" viewBox="0 0 1440 676" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-92" y="-948" width="1624" height="1624" rx="812" fill="url(#a)"></rect>
+            <defs>
+                <radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="rotate(90 428 292)scale(812)">
+                    <stop offset=".63" stop-color="#372AAC" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#372AAC"></stop>
+                </radialGradient>
+            </defs>
+        </svg>
+    <section class="pricing">
+  <div class="projects__header">
+    <h2 class="hero-title"><span>Projektek</span></h2>
+    <p>Válogatás a legfrissebb munkáinkból — design, teljesítmény és üzleti fókusz.</p>
+  </div>
+
+  <div class="projects__grid">
+    <!-- Project Card -->
+    <article class="project-card">
+      <a class="project-card__media" aria-label="Projekt megnyitása">
+        <img src="assets/project2.png" alt="Projekt 1 előnézet">
+      </a>
+
+      <div class="project-card__body">
+        <h3>Étterem weboldal</h3>
+<ul style="list-style: none; padding: 0;">
+  <li>✅ Egyedi étterem weboldal készítése</li>
+  <li>✅ Menü- és foglalási rendszer kialakítása</li>
+  <li>✅ Árlista és napi ajánlatok kezelése</li>
+  <li>✅ Asztalfoglalások és megrendelések nyomtatása / mentése</li>
+  <li>✅ Reszponzív és mobilbarát design</li>
+  <li>✅ Biztonságos online fizetés és ügyfélkezelés</li>
+</ul>
+
+        <div class="project-card__tags">
+          <span>HTML</span><span>CSS</span><span>GSAP</span>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Project Card -->
+    <article class="project-card">
+      <a class="project-card__media" aria-label="Projekt megnyitása">
+        <img src="assets/project4.png" alt="Projekt 2 előnézet">
+      </a>
+
+      <div class="project-card__body">
+        <h3>Bútor webshop</h3>
+
+<ul style="list-style: none; padding: 0;">
+  <li>✅ Egyedi bútorbolt webshop készítése</li>
+  <li>✅ Termékek kategorizálása és könnyű böngészhetőség</li>
+  <li>✅ Rendelések és árajánlatok nyomtatása / mentése</li>
+  <li>✅ Reszponzív és mobilbarát design</li>
+  <li>✅ Biztonságos online fizetés és ügyfélkezelés</li>
+</ul>
+
+        <div class="project-card__tags">
+          <span>Shop</span><span>Payments</span><span>SEO</span>
+        </div>
+      </div>
+    </article>
+
+        <!-- Project Card -->
+    <article class="project-card">
+      <a class="project-card__media" aria-label="Projekt megnyitása">
+        <img src="assets/project5.png" alt="Projekt 2 előnézet">
+      </a>
+
+      <div class="project-card__body">
+        <h3>Utazási iroda weboldal</h3>
+<ul style="list-style: none; padding: 0;">
+  <li>✅ Egyedi utazási iroda weboldal készítése</li>
+  <li>✅ Túra- és csomagajánlatok kategorizálása</li>
+  <li>✅ Árlista kalkulátor és kedvezmények kezelése</li>
+  <li>✅ Foglalások és árajánlatok nyomtatása / mentése</li>
+  <li>✅ Reszponzív és mobilbarát design</li>
+</ul>
+
+        <div class="project-card__tags">
+          <span>Shop</span><span>Payments</span><span>SEO</span>
+        </div>
+      </div>
+    </article>
+
+        <!-- Project Card -->
+    <article class="project-card">
+      <a class="project-card__media" aria-label="Projekt megnyitása">
+        <img src="assets/project.png" alt="Projekt 2 előnézet">
+      </a>
+
+      <div class="project-card__body">
+        <h3>Ékszerbolt & Webshop Projekt</h3>
+        <ul style="list-style: none; padding: 0;">
+        <li>✅ Egyedi ékszershop weboldal készítése</li>
+  <li>✅ Termékek kategorizálása és könnyű böngészhetőség</li>
+  <li>✅ Árlista kalkulátor és akciók kezelése</li>
+  <li>✅ Reszponzív és mobilbarát design</li>
+  <li>✅ Biztonságos online fizetés és ügyfélkezelés</li>
+</ul>
+
+        <div class="project-card__tags">
+          <span>Shop</span><span>Payments</span><span>SEO</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- Project Card -->
+    <article class="project-card">
+      <a class="project-card__media" aria-label="Projekt megnyitása">
+        <img src="assets/project3.png" alt="Projekt 3 előnézet">
+      </a>
+
+      <div class="project-card__body">
+        <h3>Redőny ár kalkulátor - Nyílászáró vállalkozás</h3>
+        <ul>
+  <li> ✅ CRM alapú ügyfélkezelés, teljes partner- és előzménykezeléssel</li>
+  <li> ✅ Árlista kalkulátor</li>
+  <li> ✅ Beépített árlista kalkulátor</li>
+  <li> ✅ Rendelések nyomtatása és mentése</li>
+  <li> ✅ Árajánlatok nyomtatása és mentése</li>
+</ul>
+        <div class="project-card__tags">
+          <span>CRM</span><span>Automations</span><span>Dashboard</span>
+        </div>
+
+        <div class="project-card__actions">
+
+        </div>
+      </div>
+    </article>
+  </div>
+
+</section>
+
+
+        <footer class="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-400 mt-40">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
+            <div class="sm:col-span-2 lg:col-span-1 flex flex-col justify-center">
+                <a href="/index.html">
+                <img class="h-18 w-auto" width="138" height="36" alt="logo" src="./assets/logo.png"></a>
+                <p class="text-sm/7 mt-6">
+                    Egyedi, mobilbarát weboldalakat és webshopokat, valamint személyre szabott alkalmazásokat fejlesztünk. Ha van egy jó ötleted, mi megvalósítjuk.
+                </p>
+            </div>
+            <div class="flex flex-col lg:items-center lg:justify-center">
+                <div class="flex flex-col text-sm space-y-2.5">
+                    <h2 class="font-semibold mb-5 text-white">SS Web Solutions</h2>
+                    <a class="hover:text-slate-500 transition" href="./index.html">
+                        Főoldal
+                    </a>
+                    <a class="hover:text-slate-500 transition active-btn" href="./prices.html">
+                        Árlista
+                    </a>
+                    <a class="hover:text-slate-500 transition" href="./projects.html">
+                        Projektek
+                    </a>
+                    <a class="hover:text-slate-500 transition" href="./work-with-us.html">
+                        Dolgozz velünk!
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-semibold text-white mb-5">Kérem az újdonságokat!</h2>
+                <div class="text-sm space-y-6 max-w-sm">
+                    <p>Akciók és webfejlesztési trendek első kézből – csatlakozz!</p>
+                    <div class="flex items-center justify-center gap-2 p-2 rounded-md bg-slate-900">
+                        <input class="outline-none w-full max-w-64 py-2 rounded px-2" placeholder="Enter your email" type="email">
+                        <button class="bg-indigo-600 px-4 py-2 text-white rounded">
+                            Feliratkozás
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="py-4 text-center border-t mt-6 border-slate-700">
+            Copyright 2026 © <a href="#">SS WEB SOLUTIONS - </a> Minden jog fenntartva. </a>
+        </p>
+    </footer>
+    <script src="./script.js"></script>
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Kártyák listája
+    const cards = gsap.utils.toArray(".project-card");
+    const maxTilt = 8; // hover forgatás fok
+
+    // GSAP animáció scrollhoz
+    gsap.fromTo(cards,
+      { y: 40, opacity: 0, filter: "blur(8px)" },
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.9,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".projects__grid",
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+
+    // Hover tilt effekt
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rx = ((y / rect.height) - 0.5) * -maxTilt;
+        const ry = ((x / rect.width) - 0.5) * maxTilt;
+
+        card.style.transform = `translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0px) rotateX(0deg) rotateY(0deg)";
+      });
+    });
+  });
+</script>
+</body>
+</html>

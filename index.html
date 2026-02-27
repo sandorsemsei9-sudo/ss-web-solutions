@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS Web Solutions</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="input.css">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+
+<body>
+    <nav
+        class="sticky top-0 z-50 flex items-center justify-between w-full h-18 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur">
+        <a href="./index.html">
+            <img width="120px" alt="logo" src="./assets/logo.png" />
+        </a>
+        <div class="hidden lg:flex items-center gap-8 transition duration-500">
+        <a href="./index.html" class="nav-link active-link">Főoldal</a>
+                    <a href="./prices.html" class="hover:text-slate-300 transition">
+                Árlista
+            </a>
+            <a href="./projects.html" class="hover:text-slate-300 transition">
+                Projektek
+            </a>
+        </div>
+        <div class="hidden lg:block space-x-3">
+            <a
+                class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 transition text-white rounded-md active:scale-95" href="./work-with-us.html">
+                Dolgozz velünk!
+        </a>
+        </div>
+        <button class="lg:hidden active:scale-90 transition" id="menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-menu size-6.5" aria-hidden="true">
+                <path d="M4 5h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 19h16"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div id="nav-links" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 lg:hidden transition-transform duration-400 -translate-x-full">
+        <a href="#">
+            Főoldal
+        </a>
+        <a href="./prices.html">
+            Árlista
+        </a>
+        <a href="./projects.html">
+            Projektek
+        </a>
+        <a href="./work-with-us.html">
+            Dolgozz velünk!
+        </a>
+        <button id="close-menu" class="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-slate-100 hover:bg-slate-200 transition text-black rounded-md flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-x" aria-hidden="true">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Hero Section -->
+     <section class="flex flex-row items-start">
+        <svg class="absolute -z-10 w-full -mt-40 md:mt-0" width="1440" height="676" viewBox="0 0 1440 676" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="-92" y="-948" width="1624" height="1624" rx="812" fill="url(#a)"></rect>
+            <defs>
+                <radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="rotate(90 428 292)scale(812)">
+                    <stop offset=".63" stop-color="#372AAC" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#372AAC"></stop>
+                </radialGradient>
+            </defs>
+        </svg>
+        <div class="mt-18 ml-4 w-full justify-center mb-10"> 
+            <div class="items-center justify-center">
+            <h1 class="justify-self-center text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-5x hero-title">
+            <span>Weboldalak,</span> <br><span>amelyek valóban dolgoznak</span><br><span>a vállalkozásodért.</span>
+        </h1>
+        <p class="justify-self-center text-center text-base max-w-lg mt-2 ml-4">
+            Modern design és tudatos felépítés, hogy az érdeklődőkből ügyfél legyen.
+        </p>
+            </div>
+        <div class="flex items-center justify-center gap-4 mt-18">
+            <button class="hero-btn flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 transition text-white active:scale-95 rounded-lg px-7 h-11">
+                Kérj ajánlatot
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+        </div>
+    </section>
+
+        <!-- AKCIÓ Section -->
+    <section class="flex flex-col items-center">
+        <div class="relative max-w-5xl py-20 md:py-26 mt-4 md:w-full overflow-hidden mx-2 md:mx-auto border border-indigo-900 flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#401B98]/5 to-[#180027]/10 rounded-3xl p-4 md:p-10 text-white">
+            <div class="absolute pointer-events-none top-10 -z-1 left-20 size-64 bg-gradient-to-br from-[#536DFF] to-[#4F39F6]/60 blur-[180px]"></div>
+            <div class="absolute pointer-events-none bottom-10 -z-1 right-20 size-64 bg-gradient-to-br from-[#536DFF] to-[#4F39F6]/60 blur-[180px]"></div>
+            <div class="flex flex-col items-center md:items-start max-md:text-center">
+                <a href="#!" class="group flex items-center gap-2 rounded-full text-sm p-1 pr-3 text-indigo-300 bg-indigo-200/15">
+                    <span class="bg-indigo-600 text-white text-xs px-3.5 py-1 rounded-full">AKCIÓ</span>
+                    <p class="flex items-center gap-1">
+                        <span>Kérj ajánlatot most</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right group-hover:translate-x-0.5 transition duration-300">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </p>
+                </a>
+                <h1 class="text-3xl font-medium max-w-xl mt-5 bg-gradient-to-r from-white to-[#b6abff] text-transparent bg-clip-text">
+                    Weboldalak akár már 50.000 Ft-tól !!
+                </h1>
+                <p class="text-base text-slate-400 max-w-lg mt-4">
+                    Most egyszerűen és gyorsan elindíthatod vállalkozásod online jelenlétét! Modern, látványos és felhasználóbarát weboldalakat készítünk, amelyek nemcsak lenyűgözik a látogatókat, hanem mérhető üzleti eredményeket is hoznak.
+                </p>
+                <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
+                    <a href="./prices.html">További részletek</a>
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:-mr-16 max-md:mt-10">
+                <img class="max-w-xs md:max-w-sm" alt="" src="assets/hero.png">
+            </div>
+        </div>
+    </section>
+
+        <!-- WHY ME Section -->
+    <section class="flex flex-col items-center" id="about">
+        <div class="flex flex-col items-center mt-16">
+            
+            <h2 class="text-center text-4xl font-semibold max-w-2xl">
+                Miért válassz 
+                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">minket?</span>
+            </h2>
+        </div>
+        <div class="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8 md:px-0 mt-18">
+            <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
+                <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded justify-self-center">
+                    <img alt="" src="assets/reward.png">
+                </div>
+                <div class="mt-5 space-y-2 text-center">
+                    <h3 class="text-base font-medium text-slate-200">Szakértelem és tapasztalat</h3>
+                    <p class="text-sm text-slate-400">Modern, átgondolt és skálázható webes megoldásokat készítünk, stabil technikai alapokra építve.</p>
+                </div>
+            </div>
+            <div class="py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10">
+                <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded justify-self-center">
+                    <img alt="" src="assets/lightning-icon.png">
+                </div>
+                <div class="mt-5 space-y-2 text-center">
+                    <h3 class="text-base font-medium text-slate-200">Gyors és gördülékeny együttműködés</h3>
+                    <p class="text-sm text-slate-400">Közvetlen kapcsolattartás, pontos határidők és hosszú távú együttműködésre épülő gondolkodás.</p>
+                </div>
+            </div>
+            <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10 mt-4">
+                <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded md:mt-18 justify-self-center">
+                    <img alt="" src="assets/handshake-color-icon.png">
+                </div>
+                <div class="mt-5 space-y-2 text-center">
+                    <h3 class="text-base font-medium text-slate-200">Üzletközpontú szemlélet</h3>
+                    <p class="text-sm text-slate-400">Nem csak szép weboldalt készítünk, hanem olyat, ami segít ügyfeleket szerezni és növelni a bevételed.</p>
+                </div>
+            </div>
+                        <div class="py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10 mt-4">
+                <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded justify-self-center">
+                    <img alt="" src="assets/invention-icon.png">
+                </div>
+                <div class="mt-5 space-y-2 text-center">
+                    <h3 class="text-base font-medium text-slate-200">Innováció és folyamatos fejlődés</h3>
+                    <p class="text-sm text-slate-400">Folyamatosan követjük a legújabb technológiai trendeket, hogy weboldalad hosszú távon is versenyképes és naprakész maradjon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SZOLGÁLGTATÁSAINK Section -->
+    <section class="flex flex-col items-center" id="creations">
+        <div class="flex flex-col items-center mt-32">
+            <h2 class="text-center text-4xl font-semibold max-w-2xl">
+                A mi
+                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">Szolgáltatásaink:</span>
+            </h2>
+            <p class="text-center text-slate-400 max-w-lg mt-3">
+                Legfrissebb projektjeink válogatása — minden munka tudatos tervezéssel, kreativitással és karakteres stílussal készült.
+            </p>
+        </div>
+        <div class="flex items-center gap-4 h-100 w-full max-w-5xl mt-18 mx-auto">
+            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
+                <img class="h-full w-full object-cover object-center" alt="Prompt engineers"
+                    src="assets/responsive.avif" />
+                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <h1 class="text-3xl font-semibold">Weboldal fejlesztés</h1>
+                    <p class="text-sm mt-2">
+                        Modern, gyors és mobilbarát weboldalakat készítünk, amelyek nemcsak jól néznek ki, hanem üzleti eredményeket is hoznak.
+                    </p>                
+                    <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
+                    <a href="./prices.html">További részletek</a>
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
+                <img class="h-full w-full object-cover object-right" alt="Data scientists"
+                    src="assets/e-commerce.avif" />
+                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <h1 class="text-3xl font-semibold">Webshop / webáruház készítés</h1>
+                    <p class="text-sm mt-2">
+                        Felhasználóbarát, biztonságos és könnyen kezelhető online áruházakat fejlesztünk, amelyek támogatják az értékesítést és a növekedést.
+                    </p>
+                    <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
+                    <a href="./prices.html">További részletek</a>
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
+                <img class="h-full w-full object-cover object-center" alt="Software engineers"
+                    src="assets/dashboard.avif" />
+                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <h1 class="text-3xl font-semibold">Ügyfélkezelő és automatizációs rendszerek</h1>
+                    <p class="text-sm mt-2">
+                        Egyedi ügyfélkezelő és automatizációs rendszereket fejlesztünk, amelyek hatékonyabbá és átláthatóbbá teszik a működést.                    </p>
+                    <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
+                    <a href="./prices.html">További részletek</a>
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+            <!-- Subscribe Section -->
+    <section class="flex flex-col items-center">
+        <div class="flex flex-col items-center mt-32">
+            <h2 class="text-center text-4xl font-semibold max-w-2xl">Kérem az 
+                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">újdonságokat!</span></h2>
+            <p class="text-center text-slate-400 max-w-lg mt-3">Ne maradj le az akciókról és a legfrissebb webfejlesztési trendekről – csatlakozz hírlevelünkhöz!</p>
+        </div>
+        <div class="flex items-center justify-center mt-10 border border-slate-700 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-xl w-full">
+            <input class="bg-transparent outline-none rounded-full px-4 h-full flex-1 placeholder:text-slate-400" placeholder="Enter your email address" type="text">
+            <button class="bg-indigo-600 text-white rounded-full h-11 mr-1 px-10 flex items-center justify-center hover:bg-indigo-700 active:scale-95 transition">
+                Feliratkozás
+            </button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section 
+    <section class="flex flex-col items-center" id="testimonials">
+        <div class="flex flex-col items-center mt-32">
+            <h2 class="text-center text-4xl font-semibold max-w-2xl">Ügyfeleink 
+                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">véleménye:</span>
+            </h2>
+            <p class="text-center text-slate-400 max-w-lg mt-3">Legfrissebb munkáink, melyekkel elégedett ügyfeleink tapasztalatait és visszajelzéseit tükrözzük.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-18 max-w-6xl mx-auto">
+            <div class="group border border-slate-800 p-6 rounded-xl">
+                <p class="text-slate-100 text-base">Super clean and easy to use. These Tailwind + React components saved me
+                    hours of dev time!</p>
+                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
+                    <img class="size-10 rounded-full" alt="user image"
+                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=200">
+                    <div>
+                        <h2 class="text-gray-200 font-medium">Richard Nelson</h2>
+                        <p class="text-indigo-500">AI Content Marketer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group border border-slate-800 p-6 rounded-xl">
+                <p class="text-slate-100 text-base">The design quality is top-notch. Perfect balance between simplicity and
+                    style. Highly recommend!
+                </p>
+                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
+                    <img class="size-10 rounded-full" alt="user image" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=200">
+                    <div>
+                        <h2 class="text-gray-200 font-medium">Sophia Martinez</h2>
+                        <p class="text-indigo-500">UI/UX Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group border border-slate-800 p-6 rounded-xl">
+                <p class="text-slate-100 text-base">Absolutely love the reusability of these components. My workflow feels
+                    10x faster now.
+                </p>
+                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
+                    <img class="size-10 rounded-full" alt="user image"
+                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&amp;auto=format&amp;fit=crop&amp;q=60">
+                    <div>
+                        <h2 class="text-gray-200 font-medium">Ethan Roberts</h2>
+                        <p class="text-indigo-500">Frontend Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group border border-slate-800 p-6 rounded-xl">
+                <p class="text-slate-100 text-base">Clean, elegant, and efficient. These components are a dream for any
+                    modern web developer.
+                </p>
+                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
+                    <img class="size-10 rounded-full" alt="user image"
+                        src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&amp;auto=format&amp;fit=crop&amp;q=60">
+                    <div>
+                        <h2 class="text-gray-200 font-medium">Isabella Kim</h2>
+                        <p class="text-indigo-500">Product Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group border border-slate-800 p-6 rounded-xl">
+                <p class="text-slate-100 text-base">I've tried dozens of UI kits, but this one just feels right. Everything
+                    works seamlessly.
+                </p>
+                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
+                    <img class="size-10 rounded-full" alt="user image"
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&amp;w=100&amp;h=100&amp;auto=format&amp;fit=crop">
+                    <div>
+                        <h2 class="text-gray-200 font-medium">Liam Johnson</h2>
+                        <p class="text-indigo-500">Software Engineer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group border border-slate-800 p-6 rounded-xl">
+                <p class="text-slate-100 text-base">Brilliantly structured components with clean, modern styling. Makes
+                    development a joy!
+                </p>
+                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
+                    <img class="size-10 rounded-full" alt="user image"
+                        src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png">
+                    <div>
+                        <h2 class="text-gray-200 font-medium">Ava Patel</h2>
+                        <p class="text-indigo-500">Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+    <!-- Contact Section -->
+    <section class="flex flex-col items-center" id="contact">
+        <div class="flex flex-col items-center mt-32">
+            <h2 class="text-center text-4xl font-semibold max-w-2xl">
+                Vedd fel velünk a
+                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">
+                    kapcsolatot!
+                </span>
+            </h2>
+            <p class="text-center text-slate-400 max-w-lg mt-3">
+                Ha kérdésed lenne, vagy szeretnél többet megtudni a lehetőségekről, írj nekünk bátran!</p>
+        </div>
+        <form class="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-3xl mx-auto text-slate-400 mt-16 w-full contact-form" action="https://formspree.io/f/mpqjbojk" method="POST">
+            <div>
+                <label class="font-medium text-slate-200">
+                    Név:
+                </label>
+                <input placeholder="Teljes név" class="w-full mt-2 p-3 outline-none border border-slate-700 rounded-lg focus-within:ring-1 transition focus:ring-indigo-600" type="text" name="name">
+            </div>
+            <div>
+                <label class="font-medium text-slate-200">
+                    E-mail cím:
+                </label>
+                <input placeholder="Add meg az e-mail címed" class="w-full mt-2 p-3 outline-none border border-slate-700 rounded-lg focus-within:ring-1 transition focus:ring-indigo-600" type="email" name="email">
+            </div>
+            <div class="sm:col-span-2">
+                <label class="font-medium text-slate-200">Üzenet:</label>
+                <textarea name="message" rows="8" placeholder="Miben segíthetünk?" class="resize-none w-full mt-2 p-3 outline-none rounded-lg focus-within:ring-1 transition focus:ring-indigo-600 border border-slate-700"></textarea>
+            </div>
+            <button type="submit" class="w-max flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full">
+                Küldés
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-4.5" aria-hidden="true">
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17 17 7"></path>
+                </svg>
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+
+        <footer class="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-400 mt-40">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
+            <div class="sm:col-span-2 lg:col-span-1 flex flex-col justify-center">
+                <a href="./index.html">
+                <img class="h-18 w-auto" width="138" height="36" alt="logo" src="./assets/logo.png"></a>
+                <p class="text-sm/7 mt-6">
+                    Egyedi, mobilbarát weboldalakat és webshopokat, valamint személyre szabott alkalmazásokat fejlesztünk. Ha van egy jó ötleted, mi megvalósítjuk.
+                </p>
+            </div>
+            <div class="flex flex-col lg:items-center lg:justify-center">
+                <div class="flex flex-col text-sm space-y-2.5">
+                    <h2 class="font-semibold mb-5 text-white">SS Web Solutions</h2>
+                    <a class="hover:text-slate-500 transition" href="./index.html">
+                        Főoldal
+                    </a>
+                    <a class="hover:text-slate-500 transition active-btn" href="./prices.html">
+                        Árlista
+                    </a>
+                    <a class="hover:text-slate-500 transition" href="./projects.html">
+                        Projektek
+                    </a>
+                    <a class="hover:text-slate-500 transition" href="./work-with-us.html">
+                        Dolgozz velünk!
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-semibold text-white mb-5">Kérem az újdonságokat!</h2>
+                <div class="text-sm space-y-6 max-w-sm">
+                    <p>Akciók és webfejlesztési trendek első kézből – csatlakozz!</p>
+                    <div class="flex items-center justify-center gap-2 p-2 rounded-md bg-slate-900">
+                        <input class="outline-none w-full max-w-64 py-2 rounded px-2" placeholder="Enter your email" type="email">
+                        <button class="bg-indigo-600 px-4 py-2 text-white rounded">
+                            Feliratkozás
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="py-4 text-center border-t mt-6 border-slate-700">
+            Copyright 2026 © <a href="#">SS WEB SOLUTIONS - </a> Minden jog fenntartva. </a>
+        </p>
+    </footer>
+    <script src="./script.js"></script>
+    <script>
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    window.location.href = "thankyou.html";
+    ;
+  } else {
+    alert("Hiba történt, próbáld újra.");
+  }
+});
+</script>
+</body>
+
+</html>
