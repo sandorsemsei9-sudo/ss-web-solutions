@@ -445,7 +445,7 @@
     width: auto;
   }
   .w-full {
-    width: 99%;
+    width: 100%;
   }
   .w-max {
     width: max-content;
