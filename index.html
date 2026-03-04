@@ -18,6 +18,59 @@
   margin: 0 auto;
 }
 
+.footer-contact h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.contact-label {
+  display: block;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.contact-list a {
+  color: #c7c7d9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+  color: #8b5cf6; /* indigo hover */
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-social img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social a:hover img {
+  transform: translateY(-3px);
+  opacity: 0.7;
+}
+
 .form-row {
   display: flex;
   flex-direction: column; /* alapértelmezett mobilra */
@@ -486,18 +539,34 @@
                     </a>
                 </div>
             </div>
-<div>
-  <h2 class="font-semibold text-white mb-5">Kérem az újdonságokat!</h2>
-  <div class="text-sm space-y-6 max-w-sm mx-auto">
-    <p>Akciók és webfejlesztési trendek első kézből – csatlakozz!</p>
-    <div class="flex flex-wrap items-center justify-center gap-2 p-2 rounded-md bg-slate-900">
-      <input class="flex-1 min-w-0 outline-none py-2 px-2 rounded" type="email">
-      <button class="bg-indigo-600 px-4 py-2 text-white rounded">
-        Feliratkozás
-      </button>
-    </div>
-  </div>
+<div class="footer-contact">
+  <h3>Kapcsolat</h3>
+
+  <ul class="contact-list">
+    <li>
+      <span class="contact-label">Cím:</span>
+      <a href="https://maps.google.com" target="_blank">
+        9023 Győr, Rét utca 22.
+      </a>
+    </li>
+
+    <li>
+      <span class="contact-label">Telefon:</span>
+      <a href="tel:+36702465783">
+        +36 70 246 5783
+      </a>
+    </li>
+
+    <li>
+      <span class="contact-label">Email:</span>
+      <a href="mailto:info@sswebsolutions.hu">
+        info@sswebsolutions.hu
+      </a>
+    </li>
+  </ul>
 </div>
+  </div>
+
         </div>
         <p class="py-4 text-center border-t mt-6 border-slate-700">
             Copyright 2026 © <a href="#">SS WEB SOLUTIONS - </a> Minden jog fenntartva. </a>
