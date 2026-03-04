@@ -11,6 +11,66 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
+    <style>
+        .subscribe-form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column; /* alapértelmezett mobilra */
+  gap: 10px;
+}
+
+/* Input és gomb stílusok */
+.form-row input {
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* halvány fehér / átlátszó */
+  border-radius: 50px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,0.05); /* finom háttér, sötét témához */
+  color: white;
+}
+
+.form-row button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #4f46e5; /* indigo */
+  color: white;
+  font-size: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.form-row button:hover {
+  background-color: #4338ca; /* sötétebb indigo hover */
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row;
+  }
+
+  .form-row input {
+    flex-grow: 1;
+    border-radius: 50px 0 0 50px;
+    border-right: none;
+  }
+
+  .form-row button {
+    flex-shrink: 0;
+    width: 140px;
+    border-radius: 0 50px 50px 0;
+  }
+}
+    </style>
 </head>
 
 <body>
@@ -247,7 +307,7 @@
     </section>
     
 
-            <!-- Subscribe Section -->
+
 <!-- Subscribe Section -->
 <section class="flex flex-col items-center px-4">
   <div class="flex flex-col items-center mt-32 max-w-2xl text-center">
@@ -261,27 +321,11 @@
       Ne maradj le az akciókról és a legfrissebb webfejlesztési trendekről – csatlakozz hírlevelünkhöz!
     </p>
   </div>
-<form class="flex items-center mt-10 border border-slate-700 rounded-full max-w-xl w-full focus-within:ring-2 focus-within:ring-indigo-600 overflow-hidden">
-
-  <input
-    type="email"
-    required
-    placeholder="E-mail cím megadása"
-    class="flex-grow min-w-[120px] bg-transparent px-4 py-4 text-sm outline-none placeholder:text-slate-400"
-  />
-
-<button
-  type="submit"
-  class="bg-indigo-600 hover:bg-indigo-700 
-         px-3 sm:px-6 
-         py-3 sm:py-4 
-         text-xs sm:text-sm 
-         font-medium 
-         transition active:scale-95"
->
-  Feliratkozás
-</button>
-
+<form class="subscribe-form">
+  <div class="form-row">
+    <input type="email" placeholder="E-mail cím megadása" required />
+    <button type="submit">Feliratkozás</button>
+  </div>
 </form>
 </section>
 
