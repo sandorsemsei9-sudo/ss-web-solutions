@@ -6,124 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SS Web Solutions</title>
     <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="input.css">
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
-    <style>
-        .subscribe-form {
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.footer-contact h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact-list li {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.contact-label {
-  display: block;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 3px;
-}
-
-.contact-list a {
-  color: #c7c7d9;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-list a:hover {
-  color: #8b5cf6; /* indigo hover */
-}
-
-.footer-social {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.footer-social img {
-  width: 22px;
-  height: 22px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.footer-social a:hover img {
-  transform: translateY(-3px);
-  opacity: 0.7;
-}
-
-.form-row {
-  display: flex;
-  flex-direction: column; /* alapértelmezett mobilra */
-  gap: 10px;
-}
-
-/* Input és gomb stílusok */
-.form-row input {
-  padding: 12px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* halvány fehér / átlátszó */
-  border-radius: 50px;
-  font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: rgba(255,255,255,0.05); /* finom háttér, sötét témához */
-  color: white;
-}
-
-.form-row button {
-  padding: 12px 20px;
-  border: none;
-  background-color: #4f46e5; /* indigo */
-  color: white;
-  font-size: 14px;
-  border-radius: 50px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s;
-}
-
-.form-row button:hover {
-  background-color: #4338ca; /* sötétebb indigo hover */
-}
-
-/* Desktop */
-@media (min-width: 768px) {
-  .form-row {
-    flex-direction: row;
-  }
-
-  .form-row input {
-    flex-grow: 1;
-    border-radius: 50px 0 0 50px;
-    border-right: none;
-  }
-
-  .form-row button {
-    flex-shrink: 0;
-    width: 140px;
-    border-radius: 0 50px 50px 0;
-  }
-}
-    </style>
 </head>
 
 <body>
@@ -159,7 +47,7 @@
     </nav>
 
     <div id="nav-links" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 lg:hidden transition-transform duration-400 -translate-x-full">
-        <a href="#">
+        <a href="#" class="nav-link active-link">
             Főoldal
         </a>
         <a href="./prices.html">
@@ -248,6 +136,84 @@
         </div>
     </section>
 
+    <!-- SZOLGÁLGTATÁSAINK Section -->
+
+<section class="services" aria-labelledby="services-title">
+        <div class="flex flex-col items-center">
+            <h2 class="text-center text-4xl font-semibold max-w-2xl">
+                A mi
+                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">Szolgáltatásaink:</span>
+            </h2>
+            <p class="text-center text-slate-400 max-w-lg mt-3">
+                Tudatos tervezés, karakteres stílus, gyors megvalósítás — fókuszban a konverzió.
+            </p>
+        </div>
+  <div class="services__bg" aria-hidden="true"></div>
+
+  <div class="services__wrap">
+
+    <div class="services__list" role="list">
+      <a class="service" href="./prices.html" role="listitem">
+        <div class="service__meta">
+          <span class="service__num">01</span>
+          <span class="service__tag">Landing / Céges</span>
+        </div>
+
+        <div class="service__main">
+          <h3 class="service__name">Weboldal fejlesztés</h3>
+          <p class="service__desc">
+            Modern, gyors és mobilbarát weboldalak, amik valódi üzleti eredményt hoznak.
+          </p>
+        </div>
+
+        <div class="service__cta">
+          <span class="service__arrow" aria-hidden="true">→</span>
+          <span class="service__link">Részletek</span>
+        </div>
+      </a>
+
+      <a class="service" href="./prices.html" role="listitem">
+        <div class="service__meta">
+          <span class="service__num">02</span>
+          <span class="service__tag">E-commerce</span>
+        </div>
+
+        <div class="service__main">
+          <h3 class="service__name">Webshop készítés</h3>
+          <p class="service__desc">
+            Stabil webshopok integrációkkal, konverzió-optimalizált checkouttal és admin felülettel.
+          </p>
+        </div>
+
+        <div class="service__cta">
+          <span class="service__arrow" aria-hidden="true">→</span>
+          <span class="service__link">Részletek</span>
+        </div>
+      </a>
+
+      <a class="service" href="./prices.html" role="listitem">
+        <div class="service__meta">
+          <span class="service__num">03</span>
+          <span class="service__tag">B2B / CRM</span>
+        </div>
+
+        <div class="service__main">
+          <h3 class="service__name">Automatizációs rendszerek</h3>
+          <p class="service__desc">
+            CRM, ügyfélfolyamatok és értesítések — hogy kevesebb kézimunka, több kontroll legyen.
+          </p>
+        </div>
+
+        <div class="service__cta">
+          <span class="service__arrow" aria-hidden="true">→</span>
+          <span class="service__link">Részletek</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+    
+
         <!-- WHY ME Section -->
     <section class="flex flex-col items-center" id="about">
         <div class="flex flex-col items-center mt-16">
@@ -258,7 +224,7 @@
             </h2>
         </div>
         <div class="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8 md:px-0 mt-18">
-            <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
+            <div class="group py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
                 <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded justify-self-center">
                     <img alt="" src="assets/reward.png">
                 </div>
@@ -267,7 +233,7 @@
                     <p class="text-sm text-slate-400">Modern, átgondolt és skálázható webes megoldásokat készítünk, stabil technikai alapokra építve.</p>
                 </div>
             </div>
-            <div class="py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10">
+            <div class="group py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10">
                 <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded justify-self-center">
                     <img alt="" src="assets/lightning-icon.png">
                 </div>
@@ -276,7 +242,7 @@
                     <p class="text-sm text-slate-400">Közvetlen kapcsolattartás, pontos határidők és hosszú távú együttműködésre épülő gondolkodás.</p>
                 </div>
             </div>
-            <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10 mt-4">
+            <div class="group py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10 mt-4">
                 <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded md:mt-18 justify-self-center">
                     <img alt="" src="assets/handshake-color-icon.png">
                 </div>
@@ -285,7 +251,7 @@
                     <p class="text-sm text-slate-400">Nem csak szép weboldalt készítünk, hanem olyat, ami segít ügyfeleket szerezni és növelni a bevételed.</p>
                 </div>
             </div>
-                        <div class="py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10 mt-4">
+                        <div class="group py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10 mt-4">
                 <div class="size-12 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded justify-self-center">
                     <img alt="" src="assets/invention-icon.png">
                 </div>
@@ -296,69 +262,6 @@
             </div>
         </div>
     </section>
-
-    <!-- SZOLGÁLGTATÁSAINK Section -->
-    <section class="flex flex-col items-center" id="creations">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl">
-                A mi
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">Szolgáltatásaink:</span>
-            </h2>
-            <p class="text-center text-slate-400 max-w-lg mt-3">
-                Legfrissebb projektjeink válogatása — minden munka tudatos tervezéssel, kreativitással és karakteres stílussal készült.
-            </p>
-        </div>
-        <div class="flex items-center gap-4 h-100 w-full max-w-5xl mt-18 mx-auto">
-            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
-                <img class="h-full w-full object-cover object-center" alt="Prompt engineers"
-                    src="assets/responsive.avif" />
-                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <h1 class="text-3xl font-semibold">Weboldal fejlesztés</h1>
-                    <p class="text-sm mt-2">
-                        Modern, gyors és mobilbarát weboldalakat készítünk, amelyek nemcsak jól néznek ki, hanem üzleti eredményeket is hoznak.
-                    </p>                
-                    <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
-                    <a href="./prices.html">További részletek</a>
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
-                    </svg>
-                </button>
-                </div>
-            </div>
-            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
-                <img class="h-full w-full object-cover object-right" alt="Data scientists"
-                    src="assets/e-commerce.avif" />
-                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <h1 class="text-3xl font-semibold">Webshop / webáruház készítés</h1>
-                    <p class="text-sm mt-2">
-                        Felhasználóbarát, biztonságos és könnyen kezelhető online áruházakat fejlesztünk, amelyek támogatják az értékesítést és a növekedést.
-                    </p>
-                    <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
-                    <a href="./prices.html">További részletek</a>
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
-                    </svg>
-                </button>
-                </div>
-            </div>
-            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
-                <img class="h-full w-full object-cover object-center" alt="Software engineers"
-                    src="assets/dashboard.avif" />
-                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <h1 class="text-3xl font-semibold">Ügyfélkezelő és automatizációs rendszerek</h1>
-                    <p class="text-sm mt-2">
-                        Egyedi ügyfélkezelő és automatizációs rendszereket fejlesztünk, amelyek hatékonyabbá és átláthatóbbá teszik a működést.                    </p>
-                    <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
-                    <a href="./prices.html">További részletek</a>
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
-                    </svg>
-                </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
 
 
 <!-- Subscribe Section -->

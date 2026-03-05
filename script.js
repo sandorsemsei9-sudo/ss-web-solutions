@@ -2,7 +2,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 document.addEventListener("DOMContentLoaded", () => {
+        // =============================
+    // SERVICES - bal/jobb beúszás scrollra
+    // =============================
+    const serviceCards = gsap.utils.toArray(".services__list .service");
 
+    // ha nincs services rész, ne csináljon semmit
+    if (serviceCards.length) {
+        serviceCards.forEach((card, i) => {
+            const fromX = i % 2 === 0 ? -90 : 90; // 1. bal, 2. jobb, 3. bal...
+
+            gsap.fromTo(
+                card,
+                { opacity: 0, x: fromX, y: 18, filter: "blur(6px)" },
+                {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    filter: "blur(0px)",
+                    duration: 1.2,          // lassabb
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none none",
+                        once: true
+                    }
+                }
+            );
+        });
+    }
     // =============================
     // MOBILE MENU (CSAK GSAP - nincs class toggle)
     // =============================
@@ -84,13 +113,13 @@ heroTl
         yoyo: true,
         ease: "sine.inOut"
     });
-
+    
 
     // =============================
     // SCROLL FADE-UP SECTIONS (BIZTONSÁGOS)
     // =============================
 
-    gsap.utils.toArray("#about, #creations, #testimonials, #contact")
+    gsap.utils.toArray("#creations, #testimonials")
         .forEach((section) => {
 
             gsap.from(section, {
@@ -144,23 +173,43 @@ gsap.utils.toArray("section.flex.items-center").forEach((section) => {
     // =============================
     // CARD ANIMATION
     // =============================
+const aboutCards = gsap.utils.toArray("#about .group");
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    gsap.utils.toArray(".group").forEach((card) => {
-
-        gsap.from(card, {
-            scrollTrigger: {
-                trigger: card,
-                start: "top 90%",
-                toggleActions: "play none none none"
-            },
-            y: 40,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power2.out"
-        });
-
+if (aboutCards.length) {
+  if (isMobile) {
+    // ✅ MOBIL: egyesével, külön trigger
+    aboutCards.forEach((card) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out"
+      });
     });
-
+  } else {
+    // ✅ DESKTOP: szép stagger egyben
+    gsap.from(aboutCards, {
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+      },
+      y: 60,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      stagger: 0.25
+    });
+  }
+}
 
     // =============================
     // CONTACT FORM

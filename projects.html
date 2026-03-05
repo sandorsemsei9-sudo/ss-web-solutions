@@ -250,53 +250,95 @@
             Copyright 2026 © <a href="#">SS WEB SOLUTIONS - </a> Minden jog fenntartva. </a>
         </p>
     </footer>
-    <script src="./script.js"></script>
 
-
+<script src="script.js"></script>
 <script>
-  gsap.registerPlugin(ScrollTrigger);
+// =============================
+// PROJECTS - CLIP-PATH WIPE (DESKTOP: stagger / MOBILE: one-by-one)
+// =============================
+const grid = document.querySelector(".projects__grid");
+const cards = gsap.utils.toArray(".project-card");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    // Kártyák listája
-    const cards = gsap.utils.toArray(".project-card");
-    const maxTilt = 8; // hover forgatás fok
+if (grid && cards.length) {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    // GSAP animáció scrollhoz
-    gsap.fromTo(cards,
-      { y: 40, opacity: 0, filter: "blur(8px)" },
-      {
+  // alap state
+  gsap.set(cards, { clearProps: "transform,filter,clipPath" });
+  gsap.set(cards, {
+    clipPath: "inset(0 100% 0 0 round 18px)",
+    opacity: 1,
+    y: 16,
+    filter: "blur(10px)",
+    willChange: "transform,filter,clip-path"
+  });
+
+  if (isMobile) {
+    // ✅ MOBIL: minden kártya külön trigger, így garantáltan nem egyszerre megy
+    cards.forEach((card) => {
+      gsap.to(card, {
+        clipPath: "inset(0 0% 0 0 round 18px)",
         y: 0,
-        opacity: 1,
         filter: "blur(0px)",
-        duration: 0.9,
+        duration: 0.95,
         ease: "power3.out",
-        stagger: 0.15,
         scrollTrigger: {
-          trigger: ".projects__grid",
-          start: "top 80%",
-          toggleActions: "play none none none"
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        }
+      });
+    });
+  } else {
+    // ✅ DESKTOP: mehet a szép stagger a gridről
+    gsap.to(cards, {
+      clipPath: "inset(0 0% 0 0 round 18px)",
+      y: 0,
+      filter: "blur(0px)",
+      duration: 1.1,
+      ease: "power3.out",
+      stagger: 0.14,
+      scrollTrigger: {
+        trigger: grid,
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+      }
+    });
+  }
+
+  // parallax kép (maradhat mindkettőn)
+  cards.forEach((card) => {
+    const img = card.querySelector(".project-card__media img") || card.querySelector("img");
+    if (!img) return;
+
+    gsap.fromTo(
+      img,
+      { y: 12, scale: 1.04 },
+      {
+        y: -12,
+        scale: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.6
         }
       }
     );
-
-    // Hover tilt effekt
-    cards.forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const rx = ((y / rect.height) - 0.5) * -maxTilt;
-        const ry = ((x / rect.width) - 0.5) * maxTilt;
-
-        card.style.transform = `translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-      });
-
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0px) rotateX(0deg) rotateY(0deg)";
-      });
-    });
   });
+
+  // hover lift (desktopon releváns, mobilon úgysem hover)
+  cards.forEach((card) => {
+    const lift = gsap.quickTo(card, "y", { duration: 0.22, ease: "power3.out" });
+    card.addEventListener("mouseenter", () => lift(-8));
+    card.addEventListener("mouseleave", () => lift(0));
+  });
+
+  // képek betöltése után refresh
+  window.addEventListener("load", () => ScrollTrigger.refresh());
+}
 </script>
 </body>
 </html>
